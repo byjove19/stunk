@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STUNK Digital Security Services | Lagos, Nigeria</title>
+<meta name="description" content="Professional armed & unarmed security, event security, VIP protection, bodyguards, airport pickup, and 24/7 escort services in Lagos, Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root {
+  --bg: #0f0f0f;
+  --bg2: #161616;
+  --bg3: #1e1e1e;
+  --bg4: #252525;
+  --text: #ffffff;
+  --text2: #b0b0b0;
+  --text3: #777777;
+  --accent: #E84C3D;
+  --accent2: #ff6b5b;
+  --accent-dim: rgba(232,76,61,0.12);
+  --border: rgba(255,255,255,0.06);
+  --shadow: rgba(0,0,0,0.5);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg2: #f5f5f5;
+  --bg3: #f0f0f0;
+  --bg4: #e8e8e8;
+  --text: #1a1a1a;
+  --text2: #555555;
+  --text3: #888888;
+  --accent-dim: rgba(232,76,61,0.1);
+  --border: rgba(0,0,0,0.08);
+  --shadow: rgba(0,0,0,0.1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background 0.4s,color 0.4s}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle{width:40px;height:40px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);margin-left:1rem}
+.theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
+.theme-icon-moon,.theme-icon-sun{transition:opacity 0.3s}
+[data-theme="light"] .theme-icon-sun{display:none !important}
+[data-theme="light"] .theme-icon-moon{display:block !important}
+.theme-icon-moon{display:none}
+
+/* ===== HEADER / TOPBAR ===== */
+.topbar{background:#111;border-bottom:1px solid var(--border);padding:8px 0;transition:background 0.4s,border-color 0.4s}
+[data-theme="light"] .topbar{background:#f0f0f0}
+.topbar-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.topbar-contact{display:none}
+.topbar-contact a{display:flex;align-items:center;gap:0.5rem;color:var(--text2);font-size:0.72rem;font-weight:600;text-decoration:none;transition:color 0.2s}
+.topbar-contact a:hover{color:var(--accent)}
+.topbar-contact a i{color:var(--accent);width:14px;height:14px}
+.topbar-social{display:flex;align-items:center;gap:0.75rem}
+.topbar-social a{color:var(--text3);transition:color 0.2s}
+.topbar-social a:hover{color:var(--accent)}
+
+.header{position:sticky;top:0;z-index:1000;background:rgba(15,15,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background 0.4s,border-color 0.4s}
+[data-theme="light"] .header{background:rgba(255,255,255,0.95);border-bottom-color:rgba(0,0,0,0.08)}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo-link{display:flex;align-items:center;gap:0.75rem;text-decoration:none}
+.logo-image{width:52px;height:52px;border-radius:8px;object-fit:contain;background:transparent}
+.logo-text{font-size:1.2rem;font-weight:900;letter-spacing:-0.02em;color:var(--text);text-transform:uppercase;transition:color 0.4s}
+.logo-text span{color:var(--accent)}
+
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;transition:color 0.25s;position:relative}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a.active{color:var(--accent)}
+.nav-links a.active::after{content:'';position:absolute;bottom:-24px;left:0;right:0;height:3px;background:var(--accent)}
+
+.mobile-menu-btn{display:none;width:40px;height:40px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);cursor:pointer;align-items:center;justify-content:center}
+
+/* ===== HERO SLIDER ===== */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity 1.2s ease-in-out}
+.hero-slide.active{opacity:1}
+.hero-slide:nth-child(1){background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('control.png')}
+.hero-slide:nth-child(2){background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('Hero.png')}
+.hero-content{text-align:center;max-width:800px;padding:0 2rem;position:relative;z-index:2}
+.hero-content h1{font-size:3.5rem;font-weight:900;letter-spacing:-0.02em;line-height:1.1;margin-bottom:1.5rem;text-transform:uppercase;animation:fadeInUp 1s ease-out;color:#fff}
+.hero-content p{font-size:1.1rem;color:rgba(255,255,255,0.85);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;animation:fadeInUp 1s ease-out 0.2s both}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeInUp 1s ease-out 0.4s both}
+.btn{display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.2rem;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;text-decoration:none;transition:var(--transition);border:none;text-transform:uppercase;letter-spacing:0.06em}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,76,61,0.35)}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.25);color:#fff}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-whatsapp{background:#25D366;color:#000;animation:whatsappPulse 2.5s ease-in-out infinite}
+.btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.4)}
+@keyframes whatsappPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.25)}50%{box-shadow:0 4px 30px rgba(37,211,102,0.5),0 0 50px rgba(37,211,102,0.1)}}
+
+.hero-dots{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;gap:0.75rem;z-index:3}
+.hero-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s}
+.hero-dot.active{background:var(--accent);transform:scale(1.3)}
+
+/* ===== SECTION UTILS ===== */
+.section{padding:100px 0;position:relative}
+.container{max-width:1280px;margin:0 auto;padding:0 2rem}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-divider{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1rem}
+.section-divider .line{width:40px;height:2px;background:var(--accent)}
+.section-divider span{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent)}
+.section-header h2{font-size:2.4rem;font-weight:900;letter-spacing:-0.02em;margin-bottom:1rem;text-transform:uppercase;line-height:1.15;transition:color 0.4s}
+.section-header p{font-size:1rem;color:var(--text2);max-width:560px;margin:0 auto;line-height:1.7}
+
+/* ===== SERVICE CARDS (3 Cards with Overlay) ===== */
+.service-cards-section{background:var(--bg);padding:80px 0;transition:background 0.4s}
+.service-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{position:relative;height:380px;overflow:hidden;border-radius:0;cursor:pointer}
+.service-card-bg{position:absolute;inset:0;background:center/cover no-repeat;transition:transform 0.8s ease}
+.service-card:hover .service-card-bg{transform:scale(1.1)}
+.service-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6),rgba(0,0,0,0.3));transition:all 0.5s ease}
+.service-card:hover .service-card-overlay{background:linear-gradient(to top,rgba(232,76,61,0.85),rgba(232,76,61,0.7))}
+.service-card-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;z-index:2}
+.service-card-content h3{font-size:1.3rem;font-weight:800;text-transform:uppercase;line-height:1.2;margin-bottom:0.75rem;color:#fff}
+.service-card-content p{font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:1.25rem;max-width:320px}
+.service-card-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 1.5rem;border:2px solid rgba(255,255,255,0.4);color:#fff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:all 0.3s;width:fit-content}
+.service-card-btn:hover{background:#fff;color:var(--accent);border-color:#fff}
+
+/* ===== ABOUT US ===== */
+.about-section{background:#fff;color:#1a1a1a;padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-main{width:100%;height:520px;object-fit:cover;display:block;filter:grayscale(30%)}
+.about-img-wrap::before,.about-img-wrap::after{content:'';position:absolute;width:60px;height:60px;border-color:var(--accent);border-style:solid;pointer-events:none;z-index:2}
+.about-img-wrap::before{top:-12px;left:-12px;border-width:4px 0 0 4px}
+.about-img-wrap::after{bottom:-12px;right:-12px;border-width:0 4px 4px 0}
+.about-stat-card{position:absolute;bottom:40px;right:-30px;background:#fff;padding:1.5rem 2rem;box-shadow:0 15px 40px rgba(0,0,0,0.12);text-align:center;z-index:3}
+[data-theme="light"] .about-stat-card{box-shadow:0 15px 40px rgba(0,0,0,0.08)}
+.about-stat-card .num{font-size:3.2rem;font-weight:900;color:var(--accent);line-height:1}
+.about-stat-card .label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#1a1a1a;margin-top:0.5rem}
+.about-label{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+.about-label .line{width:35px;height:2px;background:var(--accent)}
+.about-label span{font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-style:italic}
+.about-content h2{font-size:2.4rem;font-weight:900;text-transform:uppercase;line-height:1.15;margin-bottom:1.25rem;color:#1a1a1a}
+.about-content>p{font-size:0.95rem;color:#666;line-height:1.8;margin-bottom:2rem}
+.about-vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;padding-top:1.5rem;border-top:1px solid #e0e0e0}
+.vm-box{display:flex;gap:1rem;align-items:flex-start}
+.vm-icon{width:48px;height:48px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.vm-box h4{font-size:1rem;font-weight:800;text-transform:uppercase;margin-bottom:0.4rem;color:#1a1a1a}
+.vm-box p{font-size:0.85rem;color:#777;line-height:1.6}
+.about-content .btn-primary{padding:0.9rem 2rem}
+
+/* ===== VIDEO SECTION (Autoplay + Scroll Reveal) ===== */
+.video-section{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.video-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.75);z-index:2}
+.video-section-inner{position:relative;z-index:3;max-width:700px;margin:0 auto;padding:0 2rem;text-align:center;opacity:0;transform:translateY(50px) scale(0.95);transition:all 1s cubic-bezier(0.4,0,0.2,1)}
+.video-section-inner.visible{opacity:1;transform:translateY(0) scale(1)}
+.video-section-inner h2{font-size:2.4rem;font-weight:900;text-transform:uppercase;margin-bottom:1rem;line-height:1.2;color:#fff}
+.video-section-inner p{color:rgba(255,255,255,0.85);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+/* ===== WHY CHOOSE US ===== */
+.why-section{background:#f8f8f8;padding:100px 0}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.why-images{position:relative}
+.why-img-main{width:75%;height:450px;object-fit:cover;display:block;filter:grayscale(30%);position:relative;z-index:1}
+.why-img-main-wrap{position:relative;display:inline-block}
+.why-img-secondary{position:absolute;bottom:-30px;right:0;width:55%;height:280px;object-fit:cover;box-shadow:0 20px 50px rgba(0,0,0,0.15);z-index:2;border:4px solid #f8f8f8}
+.why-stat-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:1.5rem 2rem;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center;z-index:4}
+.why-stat-card .num{font-size:3rem;font-weight:900;color:var(--accent);line-height:1}
+.why-stat-card .label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#1a1a1a;margin-top:0.4rem}
+.why-label{display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+.why-label .line{width:35px;height:2px;background:var(--accent)}
+.why-label span{font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-style:italic}
+.why-content h2{font-size:2.2rem;font-weight:900;text-transform:uppercase;line-height:1.15;margin-bottom:1.25rem;color:#1a1a1a}
+.why-content>p{font-size:0.95rem;color:#666;line-height:1.8;margin-bottom:2rem}
+.why-checklist{display:grid;grid-template-columns:1fr 1fr;gap:1rem 2rem;margin-bottom:2rem}
+.why-check-item{display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:#444;font-weight:500}
+.why-check-item i{color:var(--accent);width:18px;height:18px;flex-shrink:0}
+.why-projects{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#1a1a1a}
+.why-projects a{color:var(--accent);text-decoration:none;margin-left:0.3rem}
+.why-projects a:hover{text-decoration:underline}
+
+/* ===== WHAT WE OFFER (Services) ===== */
+.services-section{background:var(--bg2);transition:background 0.4s}
+.service-row{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--bg3);border:1px solid var(--border);margin-bottom:2rem;overflow:hidden;opacity:0;transform:translateY(50px);transition:all 0.8s ease}
+.service-row.visible{opacity:1;transform:translateY(0)}
+.service-row:nth-child(even) .service-img{order:2}
+.service-row:nth-child(even) .service-content{order:1}
+.service-img{position:relative;min-height:380px;overflow:hidden}
+.service-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(70%) contrast(1.1);transition:all 0.6s ease}
+.service-row:hover .service-img img{transform:scale(1.05);filter:grayscale(0%) contrast(1)}
+.service-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(30,30,30,0.4),transparent)}
+.service-row:nth-child(even) .service-img::after{background:linear-gradient(to left,rgba(30,30,30,0.4),transparent)}
+.service-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
+.service-tag{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:1rem}
+.service-content h3{font-size:1.5rem;font-weight:800;margin-bottom:1rem;text-transform:uppercase;letter-spacing:-0.01em;transition:color 0.4s}
+.service-content p{color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
+.service-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--accent);text-decoration:none;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;transition:gap 0.3s ease}
+.service-link:hover{gap:0.8rem}
+
+/* ===== HOW IT WORKS ===== */
+.how-section{background:var(--bg);transition:background 0.4s}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.how-img{position:relative;overflow:hidden;border-radius:8px;border:1px solid var(--border);transition:border-color 0.4s}
+.how-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(50%);transition:filter 0.4s}
+.how-img:hover img{filter:grayscale(0%)}
+.how-img::after{content:'';position:absolute;inset:0;border:3px solid var(--accent);border-radius:8px;opacity:0;transition:opacity 0.4s;pointer-events:none}
+.how-img:hover::after{opacity:1}
+.how-content h3{font-size:1.8rem;font-weight:900;margin-bottom:2rem;text-transform:uppercase;line-height:1.2;transition:color 0.4s}
+.how-step{display:flex;gap:1.25rem;margin-bottom:2rem;opacity:0;transform:translateX(-30px);transition:all 0.6s ease}
+.how-step.visible{opacity:1;transform:translateX(0)}
+.how-step-num{width:48px;height:48px;border-radius:50%;background:var(--accent-dim);border:2px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;flex-shrink:0;transition:var(--transition)}
+.how-step:hover .how-step-num{background:var(--accent);color:#fff;transform:scale(1.1);box-shadow:0 0 20px rgba(232,76,61,0.3)}
+.how-step h4{font-size:1rem;font-weight:700;margin-bottom:0.4rem;text-transform:uppercase;transition:color 0.4s}
+.how-step p{font-size:0.9rem;color:var(--text2);line-height:1.6}
+
+/* ===== TESTIMONIALS / CLIENT REVIEWS ===== */
+.testimonials-section{background:#f5f5f5}
+.testimonials-section .section-header h2{color:#1a1a1a}
+.testimonials-section .section-header p{color:#666}
+.testimonials-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.testimonial-card{background:#fff;border-radius:8px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,0.04);position:relative;opacity:0;transform:translateY(30px);transition:all 0.6s ease}
+.testimonial-card.visible{opacity:1;transform:translateY(0)}
+.testimonial-card:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(0,0,0,0.08)}
+.quote-mark{font-size:3rem;color:var(--accent);opacity:0.2;line-height:1;font-family:Georgia,serif;margin-bottom:0.5rem}
+.testimonial-text{font-size:0.88rem;color:#444;line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:0.8rem}
+.testimonial-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#ff7b6b);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;color:#fff}
+.testimonial-name{font-weight:700;font-size:0.85rem;color:#1a1a1a}
+.testimonial-role{font-size:0.75rem;color:#888}
+
+/* ===== FAQ ===== */
+.faq-section{background:var(--bg2);transition:background 0.4s}
+.faq-grid{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);transition:border-color 0.4s;opacity:0;transform:translateX(-80px);transition:all 0.7s cubic-bezier(0.4,0,0.2,1)}
+.faq-item:nth-child(even){transform:translateX(80px)}
+.faq-item.visible{opacity:1;transform:translateX(0)}
+.faq-item:nth-child(1).visible{transition-delay:0ms}
+.faq-item:nth-child(2).visible{transition-delay:120ms}
+.faq-item:nth-child(3).visible{transition-delay:240ms}
+.faq-item:nth-child(4).visible{transition-delay:360ms}
+.faq-item:nth-child(5).visible{transition-delay:480ms}
+.faq-question{padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:color 0.2s}
+.faq-question h4{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--text);transition:color 0.4s}
+.faq-question i{color:var(--accent);transition:transform 0.3s ease}
+.faq-item.active .faq-question i{transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
+.faq-item.active .faq-answer{max-height:300px;padding-bottom:1.5rem}
+.faq-answer p{font-size:0.9rem;color:var(--text2);line-height:1.7}
+
+/* ===== CTA BANNER ===== */
+.cta-banner{position:relative;padding:100px 0;background:linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)),url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1920&q=80') center/cover no-repeat;background-attachment:fixed}
+.cta-banner-inner{max-width:900px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:center}
+.cta-phone-box{text-align:center}
+.cta-phone-icon{width:70px;height:70px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;animation:ctaPulse 2s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(232,76,61,0.4)}50%{box-shadow:0 0 0 20px rgba(232,76,61,0)}}
+.cta-phone-label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.7);margin-bottom:0.5rem}
+.cta-phone-num{font-size:2rem;font-weight:900;color:#fff;margin-bottom:1.5rem}
+.cta-content h2{font-size:2.2rem;font-weight:900;text-transform:uppercase;margin-bottom:1rem;line-height:1.2;color:#fff}
+.cta-content p{color:rgba(255,255,255,0.8);margin-bottom:1.5rem;line-height:1.7}
+
+/* ===== CONTACT ===== */
+.contact-section{background:var(--bg);transition:background 0.4s}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-left h2{font-size:2rem;font-weight:900;margin-bottom:1rem;text-transform:uppercase;line-height:1.2;transition:color 0.4s}
+.contact-left>p{color:var(--text2);margin-bottom:2.5rem;line-height:1.7}
+.contact-info-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.contact-info-item .icon{width:50px;height:50px;border-radius:6px;background:var(--accent-dim);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition)}
+.contact-info-item:hover .icon{background:var(--accent);color:#fff}
+.contact-info-item h4{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;transition:color 0.4s}
+.contact-info-item p,.contact-info-item a{font-size:0.9rem;color:var(--text2);text-decoration:none;transition:color 0.2s}
+.contact-info-item a:hover{color:var(--accent)}
+.contact-form{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:2.5rem;transition:background 0.4s,border-color 0.4s}
+.contact-form h3{font-size:1.2rem;font-weight:800;margin-bottom:0.5rem;text-transform:uppercase;transition:color 0.4s}
+.contact-form>p{color:var(--text2);font-size:0.9rem;margin-bottom:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group input,.form-group textarea{width:100%;padding:0.9rem 1rem;background:var(--bg4);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:'Inter',sans-serif;font-size:0.9rem;transition:var(--transition)}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+.form-group textarea{min-height:120px;resize:vertical}
+.form-group.full{grid-column:1/-1}
+.contact-form .btn{width:100%;justify-content:center;margin-top:0.5rem}
+
+/* ===== FOOTER ===== */
+.footer{background:#0a0a0a;border-top:1px solid var(--border);padding:4rem 0 0;transition:background 0.4s,border-color 0.4s}
+[data-theme="light"] .footer{background:#f0f0f0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+.footer-brand .logo-text{font-size:1.4rem;font-weight:900;margin-bottom:1rem;display:block;transition:color 0.4s}
+.footer-brand p{font-size:0.85rem;color:var(--text3);line-height:1.7;max-width:280px;transition:color 0.4s}
+.footer-social{display:flex;gap:0.6rem;margin-top:1.5rem}
+.footer-social a{width:36px;height:36px;border-radius:4px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text3);transition:var(--transition)}
+.footer-social a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.footer-col h4{font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--text);margin-bottom:1.5rem;transition:color 0.4s}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:0.7rem}
+.footer-col ul li a{color:var(--text3);text-decoration:none;font-size:0.85rem;transition:color 0.2s;display:flex;align-items:center;gap:0.4rem}
+.footer-col ul li a:hover{color:var(--accent)}
+.footer-contact-item{display:flex;align-items:flex-start;gap:0.6rem;margin-bottom:0.8rem;font-size:0.85rem;color:var(--text3);transition:color 0.4s}
+.footer-contact-item i{color:var(--accent);flex-shrink:0;margin-top:3px}
+.footer-bottom{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;font-size:0.78rem;color:var(--text3);transition:border-color 0.4s,color 0.4s}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(50px);transition:all 0.9s cubic-bezier(0.4,0,0.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-60px);transition:all 0.9s cubic-bezier(0.4,0,0.2,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(60px);transition:all 0.9s cubic-bezier(0.4,0,0.2,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-stat-card{right:10px}
+  .service-cards-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr;gap:3rem}
+  .why-stat-card{top:auto;bottom:-20px;left:20px;transform:none}
+}
+@media(max-width:768px){
+  .topbar-contact{display:none}
+  .nav-links{display:none}
+  .mobile-menu-btn{display:flex}
+  .hero-content h1{font-size:2.4rem}
+  .service-row{grid-template-columns:1fr}
+  .service-row:nth-child(even) .service-img{order:1}
+  .service-row:nth-child(even) .service-content{order:2}
+  .service-img{min-height:250px}
+  .how-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .cta-banner-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
+  .contact-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .section-header h2{font-size:1.8rem}
+  .service-cards-grid{grid-template-columns:1fr}
+  .about-vm-grid{grid-template-columns:1fr}
+  .why-checklist{grid-template-columns:1fr}
+  .about-stat-card{position:relative;bottom:auto;right:auto;margin:1rem auto 0;display:inline-block}
+  .about-img-main{height:350px}
+  .why-img-main{width:100%;position:relative;z-index:1}
+  .why-img-secondary{position:relative;bottom:auto;right:auto;width:80%;height:220px;margin:-60px auto 0;display:block;z-index:2;border:4px solid #f8f8f8}
+  .why-stat-card{position:relative;bottom:auto;left:auto;transform:none;margin:1rem auto;z-index:3}
+  /* WHY CHOOSE US: text first on mobile */
+  .why-grid{display:flex;flex-direction:column}
+  .why-content{order:1}
+  .why-images{order:2;margin-top:2rem;display:flex;flex-direction:column;align-items:center}
+}
+</style>
+<link rel="icon" type="image/webp" href="logo.webp">
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-contact">
+      <a href="tel:+2348035715392"><i data-lucide="phone"></i>On-Call Service 24/7 (+234) 803-571-5392</a>
+      <a href="mailto:Stunkdss@gmail.com"><i data-lucide="mail"></i>Stunkdss@gmail.com</a>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:14px;height:14px"></i></a>
+      <a href="#" aria-label="Twitter"><i data-lucide="twitter" style="width:14px;height:14px"></i></a>
+      <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:14px;height:14px"></i></a>
+      <a href="#" aria-label="YouTube"><i data-lucide="youtube" style="width:14px;height:14px"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#hero" class="logo-link" target="_self">
+      <img src="logo.webp" alt="STUNK Digital Security Services" class="logo-image" onerror="this.style.display='none'">
+      <span class="logo-text">STUNK <span>DIGITAL</span></span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active" target="_self">Home</a></li>
+        <li><a href="#services" target="_self">Services</a></li>
+        <li><a href="#about" target="_self">About</a></li>
+        <li><a href="#why-us" target="_self">Why Us</a></li>
+        <li><a href="#how-it-works" target="_self">How It Works</a></li>
+        <li><a href="#testimonials" target="_self">Reviews</a></li>
+        <li><a href="#faq" target="_self">FAQ</a></li>
+        <li><a href="#contact" target="_self">Contact</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;align-items:center;">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i data-lucide="sun" class="theme-icon-sun" style="width:18px;height:18px"></i>
+        <i data-lucide="moon" class="theme-icon-moon" style="width:18px;height:18px"></i>
+      </button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <i data-lucide="menu" id="mobileMenuIcon" style="width:20px;height:20px"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero" id="hero">
+  <div class="hero-slide active"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-content">
+    <h1>Our Protection Is Always There<br>24 Hours</h1>
+    <p>Professional armed & unarmed security, event coverage, VIP protection, and 24/7 escort services across Lagos, Nigeria. Your safety is our mission.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20want%20a%20free%20security%20assessment" target="_blank" class="btn btn-whatsapp">
+        <i data-lucide="message-circle" style="width:16px;height:16px"></i>WhatsApp Us Now
+      </a>
+      <a href="#services" class="btn btn-outline" target="_self">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-dots">
+    <div class="hero-dot active" data-slide="0"></div>
+    <div class="hero-dot" data-slide="1"></div>
+  </div>
+</section>
+
+<!-- SERVICE CARDS (3 Cards with Overlay) -->
+<section class="service-cards-section" id="service-cards">
+  <div class="container">
+    <div class="service-cards-grid">
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image:url('Airport\ security.png')"></div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <h3>Executive Protection & Travel Risk Management</h3>
+          <p>Comprehensive security solutions for executives and travelers across Nigeria and beyond.</p>
+          <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20need%20executive%20protection" target="_blank" class="service-card-btn">Learn More</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image:url('patrol.png')"></div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <h3>Special Operations To Protect Your People And Assets</h3>
+          <p>Elite tactical teams trained for high-risk environments and asset protection missions.</p>
+          <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20need%20special%20operations" target="_blank" class="service-card-btn">Learn More</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image:url('macho\ man.png')"></div>
+        <div class="service-card-overlay"></div>
+        <div class="service-card-content">
+          <h3>Security Risk Management & Security Audits</h3>
+          <p>Professional risk assessments and security audits to identify vulnerabilities before threats do.</p>
+          <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20need%20a%20security%20audit" target="_blank" class="service-card-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal-left">
+        <img src="car.png" alt="STUNK Security Professional" class="about-img-main">
+        <div class="about-stat-card">
+          <div class="num">25+</div>
+          <div class="label">Years Of Experience</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <div class="about-label">
+          <span class="line"></span>
+          <span>About Us</span>
+        </div>
+        <h2>We Aim To Provide You With A Life With Full Protection</h2>
+        <p>STUNK Digital Security Services has been at the forefront of private security in Lagos for over two decades. We combine military-grade discipline with modern intelligence to deliver protection that is both invisible and absolute. Every client receives a tailored security plan designed by experts who understand the unique landscape of Nigeria.</p>
+        <div class="about-vm-grid">
+          <div class="vm-box">
+            <div class="vm-icon"><i data-lucide="eye" style="width:22px;height:22px"></i></div>
+            <div>
+              <h4>Vision</h4>
+              <p>To become Nigeria's most trusted security partner by setting the gold standard for professionalism, discretion, and rapid response.</p>
+            </div>
+          </div>
+          <div class="vm-box">
+            <div class="vm-icon"><i data-lucide="target" style="width:22px;height:22px"></i></div>
+            <div>
+              <h4>Mission</h4>
+              <p>To protect lives and assets through elite training, cutting-edge technology, and unwavering commitment to client safety.</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20want%20to%20learn%20more%20about%20you" target="_blank" class="btn btn-primary">Discover More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION (Autoplay + Scroll Reveal) -->
+<section class="video-section" id="video">
+  <video class="video-bg" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1920&q=80">
+    <source src="security.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+  <div class="video-section-inner" id="videoInner">
+    <h2>Professional Security With<br>Reliable Service</h2>
+    <p>Watch how STUNK Digital Security Services operates across Lagos. From rapid deployment to 24/7 monitoring, we deliver peace of mind.</p>
+    <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20want%20to%20learn%20more" target="_blank" class="btn btn-primary">Discover More</a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section" id="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-images reveal-left">
+        <div class="why-img-main-wrap">
+          <img src="event1.webp" alt="Security Guard" class="why-img-main">
+        </div>
+        <img src="Female Security.png" alt="Security Team" class="why-img-secondary">
+        <div class="why-stat-card">
+          <div class="num">135+</div>
+          <div class="label">Professional Guards</div>
+        </div>
+      </div>
+      <div class="why-content reveal-right">
+        <div class="why-label">
+          <span class="line"></span>
+          <span>Why Choose Us</span>
+        </div>
+        <h2>Dedicated Team With Ontime Response</h2>
+        <p>Our team is composed of former military and law enforcement professionals who bring decades of field experience to every assignment. We do not just respond to threats, we anticipate them.</p>
+        <div class="why-checklist">
+          <div class="why-check-item"><i data-lucide="check" style="width:18px;height:18px"></i>Security Consulting</div>
+          <div class="why-check-item"><i data-lucide="check" style="width:18px;height:18px"></i>Guard House</div>
+          <div class="why-check-item"><i data-lucide="check" style="width:18px;height:18px"></i>Private Security</div>
+          <div class="why-check-item"><i data-lucide="check" style="width:18px;height:18px"></i>Always Honest</div>
+          <div class="why-check-item"><i data-lucide="check" style="width:18px;height:18px"></i>Close Protections</div>
+          <div class="why-check-item"><i data-lucide="check" style="width:18px;height:18px"></i>24/7 Constant Support</div>
+        </div>
+        <div class="why-projects">
+          You can see our successful awesome projects <a href="#services" target="_self">HERE.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE OFFER -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-divider"><span class="line"></span><span>What We Offer</span><span class="line"></span></div>
+      <h2>All The Answers To Your<br>Unfulfilled Security Needs</h2>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img">
+        <img src="armed.png" alt="Armed Security" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80'">
+      </div>
+      <div class="service-content">
+        <div class="service-tag"><i data-lucide="shield" style="width:14px;height:14px"></i>Business Security Service</div>
+        <h3>Armed & Unarmed Security</h3>
+        <p>Trained officers for residential, commercial and industrial sites across Lagos. Every officer is licensed, vetted, and trained to handle any situation with professionalism and calm authority.</p>
+        <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20need%20armed%20security" target="_blank" class="service-link">Read More <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img">
+        <img src="suit.png" alt="VIP Protection" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80'">
+      </div>
+      <div class="service-content">
+        <div class="service-tag"><i data-lucide="user-check" style="width:14px;height:14px"></i>Private Security Service</div>
+        <h3>VIP Protection & Bodyguard</h3>
+        <p>Close protection for executives, celebrities and high-net-worth individuals. Discreet, professional, and always one step ahead. Your safety is our absolute priority.</p>
+        <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20need%20VIP%20protection" target="_blank" class="service-link">Read More <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img">
+        <img src="pickup.png" alt="Airport Escort" onerror="this.src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&q=80'">
+      </div>
+      <div class="service-content">
+        <div class="service-tag"><i data-lucide="plane" style="width:14px;height:14px"></i>Shopping Security Service</div>
+        <h3>Airport Pickup & Escort</h3>
+        <p>Safe airport transfers and 24/7 mobile escort services anywhere in Lagos. From Murtala Muhammed to your destination, we have got you covered every kilometer.</p>
+        <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20need%20airport%20pickup" target="_blank" class="service-link">Read More <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img">
+        <img src="redcarpet.webp" alt="Crowd Control" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80'">
+      </div>
+      <div class="service-content">
+        <div class="service-tag"><i data-lucide="users" style="width:14px;height:14px"></i>Airport Security Service</div>
+        <h3>Crowd Control & Bouncers</h3>
+        <p>Professional crowd management and venue door security for nightlife, weddings, concerts, and private events. We keep the peace so you can enjoy the moment.</p>
+        <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20need%20crowd%20control" target="_blank" class="service-link">Read More <i data-lucide="arrow-right" style="width:14px;height:14px"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT REVIEWS -->
+<section class="section testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-divider"><span class="line" style="background:var(--accent)"></span><span style="color:var(--accent)">Client Reviews</span><span class="line" style="background:var(--accent)"></span></div>
+      <h2>Our Clients Reviews</h2>
+      <p>Real feedback from real clients across Lagos who trust STUNK with their safety.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" style="transition-delay:0ms">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">STUNK handled security for our company's annual gala flawlessly. Professional, polite, and always alert. Our guests felt completely safe.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SA</div>
+          <div><div class="testimonial-name">Sarah Adeyemi</div><div class="testimonial-role">CEO, Lagos Retail</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card" style="transition-delay:100ms">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">We hired STUNK for our estate in Lekki. Response time is incredible and the officers are genuinely caring with residents. Best decision.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MO</div>
+          <div><div class="testimonial-name">Michael Okonkwo</div><div class="testimonial-role">Estate Chairman</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card" style="transition-delay:200ms">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">The airport escort service saved me so much stress. My family felt protected from arrival to hotel. Kaobi and his team are the real deal.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AC</div>
+          <div><div class="testimonial-name">Amara Chukwu</div><div class="testimonial-role">Business Traveler</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card" style="transition-delay:300ms">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">Outstanding crowd control at our concert. The bouncers were firm but respectful. Not a single incident all night. Will definitely rehire.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DJ</div>
+          <div><div class="testimonial-name">David Johnson</div><div class="testimonial-role">Event Organizer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section" id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-divider"><span class="line"></span><span>How We Work</span><span class="line"></span></div>
+      <h2>Securing All The Values<br>Of Your Business</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-img reveal-left">
+        <img src="team2.png" alt="STUNK Team" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80'">
+      </div>
+      <div class="how-content">
+        <h3>Dedicated Team With<br>On-Time Response</h3>
+        <div class="how-step" style="transition-delay:0ms">
+          <div class="how-step-num">01</div>
+          <div><h4>Choose Your Service</h4><p>Select from our range of security solutions tailored to your specific needs and environment.</p></div>
+        </div>
+        <div class="how-step" style="transition-delay:100ms">
+          <div class="how-step-num">02</div>
+          <div><h4>Make An Appointment</h4><p>Reach out via WhatsApp or phone. We respond within minutes to discuss your requirements.</p></div>
+        </div>
+        <div class="how-step" style="transition-delay:200ms">
+          <div class="how-step-num">03</div>
+          <div><h4>Pay Your Service</h4><p>Flexible payment options. We provide transparent pricing with no hidden fees.</p></div>
+        </div>
+        <div class="how-step" style="transition-delay:300ms">
+          <div class="how-step-num">04</div>
+          <div><h4>Enjoy With Your Bodyguards</h4><p>Our trained officers deploy and keep you safe. We monitor, report, and adapt 24/7.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-divider"><span class="line"></span><span>FAQ</span><span class="line"></span></div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about our security services in Lagos.</p>
+    </div>
+    <div class="faq-grid reveal">
+      <div class="faq-item active">
+        <div class="faq-question">
+          <h4>How quickly can you deploy security officers?</h4>
+          <i data-lucide="chevron-down" style="width:20px;height:20px"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We offer rapid deployment across Lagos within 2 to 4 hours for urgent requests. For planned events or long-term contracts, we recommend booking at least 48 hours in advance to ensure optimal team selection and briefing.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Are your security officers licensed and vetted?</h4>
+          <i data-lucide="chevron-down" style="width:20px;height:20px"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. Every officer undergoes rigorous background checks, psychological evaluations, and continuous training. All armed personnel hold valid licenses issued by the Nigerian Police Force and comply with NSCDC regulations.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Do you provide security for events and private parties?</h4>
+          <i data-lucide="chevron-down" style="width:20px;height:20px"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we specialize in event security including weddings, concerts, corporate gatherings, and private parties. Our team handles access control, crowd management, VIP escort, and emergency response protocols.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>What areas in Lagos do you cover?</h4>
+          <i data-lucide="chevron-down" style="width:20px;height:20px"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We operate across all major areas of Lagos including Lekki, Victoria Island, Ikoyi, Ikeja, Yaba, Surulere, and Lagos Island. Our mobile units can reach any location within the Lagos metropolis.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Can I hire a bodyguard for international travel?</h4>
+          <i data-lucide="chevron-down" style="width:20px;height:20px"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, our executive protection team includes travel security specialists who can accompany clients on domestic and international trips. We handle logistics, route planning, and coordination with local security at destinations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="cta-banner">
+  <div class="cta-banner-inner">
+    <div class="cta-phone-box">
+      <img src="logo.webp" alt="STUNK" style="width:80px;height:80px;border-radius:8px;object-fit:contain;margin:0 auto 1.5rem" onerror="this.style.display='none'">
+      <div class="cta-phone-icon">
+        <i data-lucide="phone" style="width:28px;height:28px;color:#fff"></i>
+      </div>
+      <div class="cta-phone-label">On-Call Service 24/7</div>
+      <a href="https://wa.me/2347026613013?text=Hello%20STUNK%2C%20I%20want%20a%20free%20security%20assessment" target="_blank" class="btn btn-primary">Get Started</a>
+    </div>
+    <div class="cta-content">
+      <h2>Our Protection Is Always There<br>24 Hours</h2>
+      <p>Book a free security assessment today. Our team responds within minutes. No obligation, just professional advice from experts who understand Lagos.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://wa.me/2347026613013" target="_blank" class="btn btn-whatsapp">
+          <i data-lucide="message-circle" style="width:16px;height:16px"></i>WhatsApp Now
+        </a>
+        <a href="tel:+2348035715392" class="btn btn-outline" target="_self">
+          <i data-lucide="phone" style="width:14px;height:14px"></i>Call Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <div class="section-divider" style="justify-content:flex-start;margin-bottom:1rem">
+          <span class="line"></span><span>Our Contact</span>
+        </div>
+        <h2>Keep In Touch With<br>STUNK Security Guard & Consulting</h2>
+        <p>Whether you need guards for a site, event coverage, or personal protection, we are ready to deploy within hours across Lagos.</p>
+
+        <div class="contact-info-item">
+          <div class="icon"><i data-lucide="map-pin" style="width:18px;height:18px"></i></div>
+          <div><h4>Address</h4><p>Lagos, Nigeria</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i data-lucide="phone" style="width:18px;height:18px"></i></div>
+          <div><h4>Phone</h4><a href="tel:+2348035715392">+234 803 571 5392</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i data-lucide="message-circle" style="width:18px;height:18px"></i></div>
+          <div><h4>WhatsApp</h4><a href="https://wa.me/2347026613013" target="_blank">+234 702 661 3013</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="icon"><i data-lucide="mail" style="width:18px;height:18px"></i></div>
+          <div><h4>Email</h4><a href="mailto:Stunkdss@gmail.com">Stunkdss@gmail.com</a></div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal-right">
+        <h3>Send Message</h3>
+        <p>Fill out the form below and we will get back to you within minutes.</p>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><input type="text" id="cfName" placeholder="Your Name" required></div>
+            <div class="form-group"><input type="tel" id="cfPhone" placeholder="Phone Number" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><input type="email" id="cfEmail" placeholder="Email Address" required></div>
+            <div class="form-group"><input type="text" id="cfSubject" placeholder="Subject"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full"><textarea id="cfMessage" placeholder="Your Message" required></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Send My Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+          <img src="logo.webp" alt="STUNK" style="width:44px;height:44px;border-radius:6px;object-fit:contain" onerror="this.style.display='none'">
+          <span class="logo-text">STUNK <span style="color:var(--accent)">DIGITAL</span></span>
+        </div>
+        <p>Professional security services for homes, businesses, and events across Lagos. Tough on threats, caring on people.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Home</a></li>
+          <li><a href="#about" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>About Us</a></li>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Privacy Policy</a></li>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Careers</a></li>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Case Study</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Personal Protection</a></li>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Commercial Security</a></li>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Security Consulting</a></li>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Objects Protected</a></li>
+          <li><a href="#services" target="_self"><i data-lucide="chevron-right" style="width:12px;height:12px"></i>Surveillance Cameras</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item"><i data-lucide="map-pin" style="width:14px;height:14px"></i><span>Lagos, Nigeria</span></div>
+        <div class="footer-contact-item"><i data-lucide="phone" style="width:14px;height:14px"></i><span>+234 803 571 5392</span></div>
+        <div class="footer-contact-item"><i data-lucide="message-circle" style="width:14px;height:14px"></i><span>+234 702 661 3013</span></div>
+        <div class="footer-contact-item"><i data-lucide="mail" style="width:14px;height:14px"></i><span>Stunkdss@gmail.com</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 STUNK Digital Security Services. Lagos, Nigeria. All rights reserved. | Designed for Bodyguard & Security Agency</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== THEME TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('stunk-theme');
+if (savedTheme) html.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('stunk-theme', next);
+  setTimeout(function(){ lucide.createIcons(); }, 50);
+});
+
+// ===== INIT LUCIDE =====
+document.addEventListener('DOMContentLoaded', function(){
+  lucide.createIcons();
+});
+window.addEventListener('load', function(){
+  lucide.createIcons();
+});
+
+// ===== HERO SLIDER =====
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dot');
+let currentSlide = 0;
+const totalSlides = slides.length;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+}
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+}
+setInterval(nextSlide, 6000);
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => { currentSlide = index; showSlide(currentSlide); });
+});
+
+// ===== MOBILE MENU =====
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+let menuOpen = false;
+mobileMenuBtn.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  if (menuOpen) {
+    navLinks.style.display = 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '70px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'rgba(15,15,15,0.98)';
+    navLinks.style.backdropFilter = 'blur(20px)';
+    navLinks.style.padding = '2rem';
+    navLinks.style.borderBottom = '1px solid var(--border)';
+    navLinks.style.gap = '1.5rem';
+    navLinks.style.zIndex = '999';
+    mobileMenuIcon.setAttribute('data-lucide', 'x');
+  } else {
+    navLinks.style.display = 'none';
+    mobileMenuIcon.setAttribute('data-lucide', 'menu');
+  }
+  setTimeout(function(){ lucide.createIcons(); }, 50);
+});
+
+// ===== SMOOTH SCROLL + CLOSE MOBILE MENU =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    if (menuOpen) {
+      navLinks.style.display = 'none';
+      mobileMenuIcon.setAttribute('data-lucide', 'menu');
+      menuOpen = false;
+      lucide.createIcons();
+    }
+  });
+});
+
+// ===== SCROLL REVEAL OBSERVER =====
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .service-row, .how-step, .video-section-inner, .testimonial-card, .faq-item').forEach(el => revealObserver.observe(el));
+
+// ===== ACTIVE NAV LINK ON SCROLL =====
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { const top = s.offsetTop - 100; if (pageYOffset >= top) current = s.getAttribute('id'); });
+  navItems.forEach(a => { a.classList.remove('active'); if (a.getAttribute('href') === '#' + current) a.classList.add('active'); });
+});
+
+// ===== FAQ ACCORDION =====
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+});
+
+// ===== CONTACT FORM -> WHATSAPP =====
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('cfName').value.trim();
+  const phone = document.getElementById('cfPhone').value.trim();
+  const email = document.getElementById('cfEmail').value.trim();
+  const subject = document.getElementById('cfSubject').value.trim() || 'General Inquiry';
+  const message = document.getElementById('cfMessage').value.trim();
+
+  const text = 'Hello STUNK Digital Security,' + '%0A%0A' +
+    '*Name:* ' + encodeURIComponent(name) + '%0A' +
+    '*Phone:* ' + encodeURIComponent(phone) + '%0A' +
+    '*Email:* ' + encodeURIComponent(email) + '%0A' +
+    '*Subject:* ' + encodeURIComponent(subject) + '%0A%0A' +
+    '*Message:*%0A' + encodeURIComponent(message);
+
+  window.open('https://wa.me/2347026613013?text=' + text, '_blank');
+});
+</script>
+
+
+<!-- ANTI-CLONE & CONTENT PROTECTION -->
+<script>
+(function(){
+  'use strict';
+
+  // 1. Disable Right-Click
+  document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+    return false;
+  }, true);
+
+  // 2. Disable Text Selection
+  document.addEventListener('selectstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+
+  // 3. Disable Keyboard Shortcuts
+  document.addEventListener('keydown', function(e){
+    // Ctrl+S, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, F12
+    if(
+      (e.ctrlKey && e.key === 's') ||
+      (e.ctrlKey && e.key === 'u') ||
+      (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) ||
+      (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) ||
+      (e.ctrlKey && e.shiftKey && (e.key === 'c' || e.key === 'C')) ||
+      (e.key === 'F12')
+    ){
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+    // Ctrl+C, Ctrl+X, Ctrl+A
+    if((e.ctrlKey && (e.key === 'c' || e.key === 'C')) ||
+       (e.ctrlKey && (e.key === 'x' || e.key === 'X')) ||
+       (e.ctrlKey && (e.key === 'a' || e.key === 'A'))){
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 4. Disable Image Dragging & Right-Click on Images
+  document.querySelectorAll('img').forEach(function(img){
+    img.setAttribute('draggable', 'false');
+    img.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+  });
+
+  // 5. Console Warning
+  setTimeout(function(){
+    console.clear();
+    console.log('%cSTOP!', 'color:#E84C3D;font-size:60px;font-weight:900;text-shadow:2px 2px 0 #000;');
+    console.log('%cThis is a protected website. Unauthorized copying, cloning, or scraping of STUNK Digital Security Services content is strictly prohibited.', 'color:#E84C3D;font-size:14px;font-weight:600;');
+    console.log('%cAll rights reserved. Violators will be prosecuted.', 'color:#777;font-size:12px;');
+  }, 500);
+
+  // 6. Detect DevTools opening (basic)
+  let devtoolsOpen = false;
+  const threshold = 160;
+  setInterval(function(){
+    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0f0f0f;color:#E84C3D;font-family:Inter,sans-serif;text-align:center;padding:2rem"><div><h1 style="font-size:3rem;font-weight:900;margin-bottom:1rem">ACCESS DENIED</h1><p style="color:#b0b0b0;font-size:1.1rem">Developer tools are not permitted on this site.<br>Please close them and refresh.</p></div></div>';
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+
+  // 7. Disable iframe embedding (clickjacking protection)
+  if(window.top !== window.self){
+    window.top.location = window.self.location;
+  }
+
+  // 8. Disable Print
+  window.addEventListener('beforeprint', function(e){
+    e.preventDefault();
+    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0f0f0f;color:#E84C3D;font-family:Inter,sans-serif"><h1 style="font-size:2rem;font-weight:900">Printing is disabled.</h1></div>';
+    return false;
+  });
+
+  // 9. Watermark on copy attempts
+  document.addEventListener('copy', function(e){
+    e.preventDefault();
+    const watermark = '\n\n--- Content from STUNK Digital Security Services | Lagos, Nigeria | www.stunkdss.com ---';
+    e.clipboardData.setData('text/plain', 'Content protected. Visit our website for official information.' + watermark);
+  });
+
+  // 10. MutationObserver to detect tampering
+  if(window.MutationObserver){
+    const observer = new MutationObserver(function(mutations){
+      mutations.forEach(function(mutation){
+        if(mutation.type === 'childList' && mutation.addedNodes.length > 0){
+          mutation.addedNodes.forEach(function(node){
+            if(node.nodeType === 1 && node.tagName === 'SCRIPT' && !node.src.includes('lucide')){
+              // Allow only known scripts
+            }
+          });
+        }
+      });
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  }
+})();
+</script>
+
+</body>
+</html>
