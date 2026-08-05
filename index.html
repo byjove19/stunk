@@ -49,6 +49,8 @@
 <meta property="og:description" content="Professional armed & unarmed security, VIP protection, bodyguards, event security & 24/7 escort services in Lagos, Nigeria. Your safety is our mission.">
 <meta property="og:url" content="https://stunksdss.netlify.app/">
 <meta property="og:image" content="https://stunksdss.netlify.app/og-image.png">
+<meta property="og:image:secure_url" content="https://stunksdss.netlify.app/og-image.png">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="STUNK Digital Security Services - Professional Security in Lagos">
@@ -270,6 +272,7 @@
   overflow-x: hidden;
   width: 100%;
   position: relative;
+  scrollbar-gutter: stable;
 }
 img, video, iframe, svg {
   max-width: 100%;
@@ -304,28 +307,28 @@ img, video, iframe, svg {
   --shadow: rgba(0,0,0,0.1);
 }
 /* ===== PRELOADER ===== */
-.preloader{position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.6s ease,visibility 0.6s ease}
+.preloader{position:fixed;inset:0;background:#0a0a0a;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.35s ease,visibility 0.35s ease}
 .preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
 
 .preloader-shield{width:90px;height:90px;position:relative;margin-bottom:2rem}
 .preloader-shield svg{width:100%;height:100%;display:block}
-.preloader-shield .shield-bg{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:300;stroke-dashoffset:300;animation:shieldDraw 1.2s ease forwards}
-.preloader-shield .shield-check{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:checkDraw 0.6s ease 0.8s forwards}
-.preloader-shield .shield-inner{fill:var(--accent);opacity:0;animation:shieldFill 0.4s ease 1.2s forwards}
+.preloader-shield .shield-bg{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:300;stroke-dashoffset:300;animation:shieldDraw 0.5s ease forwards}
+.preloader-shield .shield-check{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:checkDraw 0.3s ease 0.35s forwards}
+.preloader-shield .shield-inner{fill:var(--accent);opacity:0;animation:shieldFill 0.25s ease 0.5s forwards}
 
 @keyframes shieldDraw{to{stroke-dashoffset:0}}
 @keyframes checkDraw{to{stroke-dashoffset:0}}
 @keyframes shieldFill{to{opacity:0.15}}
 
-.preloader-brand{font-size:1.6rem;font-weight:900;letter-spacing:0.15em;color:#fff;text-transform:uppercase;margin-bottom:0.3rem;opacity:0;transform:translateY(15px);animation:brandIn 0.6s ease 0.4s forwards}
+.preloader-brand{font-size:1.6rem;font-weight:900;letter-spacing:0.15em;color:#fff;text-transform:uppercase;margin-bottom:0.3rem;opacity:0;transform:translateY(15px);animation:brandIn 0.35s ease 0.15s forwards}
 .preloader-brand span{color:var(--accent)}
-.preloader-sub{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.35em;color:var(--text3);margin-bottom:2.5rem;opacity:0;animation:brandIn 0.6s ease 0.6s forwards}
+.preloader-sub{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.35em;color:var(--text3);margin-bottom:2.5rem;opacity:0;animation:brandIn 0.35s ease 0.25s forwards}
 
 @keyframes brandIn{to{opacity:1;transform:translateY(0)}}
 
 .preloader-progress{width:200px;height:3px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:1rem;position:relative}
-.preloader-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;animation:progressFill 2s ease-in-out forwards}
-@keyframes progressFill{0%{width:0%}50%{width:70%}100%{width:100%}}
+.preloader-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;animation:progressFill 0.9s ease-in-out forwards}
+@keyframes progressFill{0%{width:0%}60%{width:80%}100%{width:100%}}
 
 .preloader-percent{font-size:0.7rem;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;min-width:36px;text-align:center}
 
@@ -385,7 +388,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 .mobile-menu-btn{display:none;width:40px;height:40px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);cursor:pointer;align-items:center;justify-content:center}
 
 /* ===== HERO SLIDER ===== */
-.hero{position:relative;min-height:90vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero{position:relative;min-height:90vh;min-height:90dvh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity 1.2s ease-in-out}
 .hero-slide.active{opacity:1}
 .hero-slide:nth-child(1){background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('control.png')}
@@ -507,7 +510,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 /* ===== HOW IT WORKS ===== */
 .how-section{background:var(--bg);transition:background 0.4s}
 .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.how-img{position:relative;overflow:hidden;border-radius:8px;border:1px solid var(--border);transition:border-color 0.4s}
+.how-img{position:relative;overflow:hidden;border-radius:8px;border:1px solid var(--border);transition:border-color 0.4s;aspect-ratio:4/5;min-height:420px}
 .how-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(50%);transition:filter 0.4s}
 .how-img:hover img{filter:grayscale(0%)}
 .how-img::after{content:'';position:absolute;inset:0;border:3px solid var(--accent);border-radius:8px;opacity:0;transition:opacity 0.4s;pointer-events:none}
@@ -633,7 +636,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
   .service-row:nth-child(even) .service-content{order:2}
   .service-img{min-height:250px}
   .how-grid{grid-template-columns:1fr}
+  .how-img{aspect-ratio:16/10;min-height:260px}
   .testimonials-grid{grid-template-columns:1fr}
+  .cta-banner{background-attachment:scroll}
   .cta-banner-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
   .contact-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
@@ -702,7 +707,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 <header class="header" id="header">
   <div class="header-inner">
     <a href="#hero" class="logo-link" target="_self">
-      <img src="logo.webp" alt="STUNK Digital Security Services" class="logo-image" onerror="this.style.display='none'">
+      <img src="logo.webp" alt="STUNK Digital Security Services" class="logo-image" width="52" height="52" onerror="this.style.display='none'">
       <span class="logo-text">STUNK <span>DIGITAL</span></span>
     </a>
     <nav>
@@ -789,7 +794,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap reveal-left">
-        <img src="car.png" alt="STUNK Security Professional" class="about-img-main" loading="lazy">
+        <img src="car.png" alt="STUNK Security Professional" class="about-img-main" width="600" height="520" loading="lazy">
         <div class="about-stat-card">
           <div class="num">25+</div>
           <div class="label">Years Of Experience</div>
@@ -843,9 +848,9 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
     <div class="why-grid">
       <div class="why-images reveal-left">
         <div class="why-img-main-wrap">
-          <img src="event1.webp" alt="Security Guard" class="why-img-main" loading="lazy">
+          <img src="event1.webp" alt="Security Guard" class="why-img-main" width="450" height="450" loading="lazy">
         </div>
-        <img src="Female Security.png" alt="Security Team" class="why-img-secondary" loading="lazy">
+        <img src="Female Security.png" alt="Security Team" class="why-img-secondary" width="330" height="280" loading="lazy">
         <div class="why-stat-card">
           <div class="num">135+</div>
           <div class="label">Professional Guards</div>
@@ -884,7 +889,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 
     <div class="service-row">
       <div class="service-img">
-        <img src="armed.png" alt="Armed Security" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80'">
+        <img src="armed.png" alt="Armed Security" width="700" height="380" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80'">
       </div>
       <div class="service-content">
         <div class="service-tag"><i data-lucide="shield" style="width:14px;height:14px"></i>Business Security Service</div>
@@ -896,7 +901,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 
     <div class="service-row">
       <div class="service-img">
-        <img src="suit.png" alt="VIP Protection" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80'">
+        <img src="suit.png" alt="VIP Protection" width="700" height="380" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80'">
       </div>
       <div class="service-content">
         <div class="service-tag"><i data-lucide="user-check" style="width:14px;height:14px"></i>Private Security Service</div>
@@ -908,7 +913,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 
     <div class="service-row">
       <div class="service-img">
-        <img src="pickup.png" alt="Airport Escort" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&q=80'">
+        <img src="pickup.png" alt="Airport Escort" width="700" height="380" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&q=80'">
       </div>
       <div class="service-content">
         <div class="service-tag"><i data-lucide="plane" style="width:14px;height:14px"></i>Shopping Security Service</div>
@@ -920,7 +925,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 
     <div class="service-row">
       <div class="service-img">
-        <img src="redcarpet.webp" alt="Crowd Control" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80'">
+        <img src="redcarpet.webp" alt="Crowd Control" width="700" height="380" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80'">
       </div>
       <div class="service-content">
         <div class="service-tag"><i data-lucide="users" style="width:14px;height:14px"></i>Airport Security Service</div>
@@ -986,7 +991,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
     </div>
     <div class="how-grid">
       <div class="how-img reveal-left">
-        <img src="team2.png" alt="STUNK Team" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80'">
+        <img src="team2.png" alt="STUNK Team" width="600" height="600" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80'">
       </div>
       <div class="how-content">
         <h3>Dedicated Team With<br>On-Time Response</h3>
@@ -1073,7 +1078,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
 <section class="cta-banner" id="cta-banner">
   <div class="cta-banner-inner">
     <div class="cta-phone-box">
-      <img src="logo.webp" alt="STUNK" style="width:80px;height:80px;border-radius:8px;object-fit:contain;margin:0 auto 1.5rem" onerror="this.style.display='none'">
+      <img src="logo.webp" alt="STUNK" style="width:80px;height:80px;border-radius:8px;object-fit:contain;margin:0 auto 1.5rem" width="80" height="80" onerror="this.style.display='none'">
       <div class="cta-phone-icon">
         <i data-lucide="phone" style="width:28px;height:28px;color:#fff"></i>
       </div>
@@ -1154,7 +1159,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:
     <div class="footer-grid">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
-          <img src="logo.webp" alt="STUNK" style="width:44px;height:44px;border-radius:6px;object-fit:contain" onerror="this.style.display='none'">
+          <img src="logo.webp" alt="STUNK" style="width:44px;height:44px;border-radius:6px;object-fit:contain" width="44" height="44" onerror="this.style.display='none'">
           <span class="logo-text">STUNK <span style="color:var(--accent)">DIGITAL</span></span>
         </div>
         <p>Professional security services for homes, businesses, and events across Lagos. Tough on threats, caring on people.</p>
@@ -1219,26 +1224,40 @@ document.addEventListener('DOMContentLoaded', function(){
   lucide.createIcons();
 });
 
-// Preloader percentage counter
+// Preloader percentage counter - fast, tied to real page load
 (function(){
   const percentEl = document.getElementById('preloaderPercent');
   const fillEl = document.getElementById('preloaderFill');
+  const preloader = document.getElementById('preloader');
   let pct = 0;
+  let finished = false;
+
+  function hidePreloader(){
+    if(finished) return;
+    finished = true;
+    clearInterval(interval);
+    if(percentEl) percentEl.textContent = '100%';
+    if(preloader) preloader.classList.add('hidden');
+  }
+
   const interval = setInterval(function(){
-    pct += Math.floor(Math.random() * 8) + 2;
-    if(pct >= 100){ pct = 100; clearInterval(interval); }
+    pct += Math.floor(Math.random() * 12) + 6;
+    if(pct >= 96){ pct = 96; }
     if(percentEl) percentEl.textContent = pct + '%';
-  }, 80);
+  }, 60);
+
+  // Hide as soon as the page is actually ready
+  if(document.readyState === 'complete'){
+    setTimeout(hidePreloader, 150);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(hidePreloader, 150); });
+  }
+  // Hard failsafe so the preloader never blocks the site for long
+  setTimeout(hidePreloader, 1800);
 })();
 
-// Hide preloader when everything is loaded
 window.addEventListener('load', function(){
   lucide.createIcons();
-  const percentEl = document.getElementById('preloaderPercent');
-  if(percentEl) percentEl.textContent = '100%';
-  setTimeout(function(){
-    document.getElementById('preloader').classList.add('hidden');
-  }, 600);
 });
 
 // Lazy load fade-in
